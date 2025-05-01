@@ -10,18 +10,18 @@ This repository provides hands-on examples that cover a wide range of CUDA progr
 
 ```
 .
-├── advanced_matmul/       # Advanced matrix multiplication implementations
-├── convolution/           # GPU-accelerated convolution operations
-├── DSTimer/               # Timing utilities for performance measurement
-├── image_rotation/        # Image rotation with OpenCV integration
-├── image_rotation_without_OpenCV/ # OpenCV-independent image rotation
-├── matmul/                # Basic matrix multiplication examples
-├── miscellaneous/         # CUDA utilities and demonstrations
-├── parallel_reduction/    # Parallel reduction patterns
-├── pinned_memory/         # Pinned memory examples
-├── ptx/                   # PTX-related examples
-├── vecadd/                # Basic vector addition
-└── vecsum_multinode/      # Multi-GPU and multi-node vector summation
+├── advanced_matmul/                # Advanced matrix multiplication implementations
+├── convolution/                    # GPU-accelerated convolution operations
+├── DSTimer/                        # Timing utilities for performance measurement
+├── image_rotation/                 # Image rotation with OpenCV integration
+├── image_rotation_without_OpenCV/  # OpenCV-independent image rotation
+├── matmul/                         # Basic matrix multiplication examples
+├── miscellaneous/                  # CUDA utilities and demonstrations
+├── parallel_reduction/             # Parallel reduction patterns
+├── pinned_memory/                  # Pinned memory examples
+├── ptx/                            # PTX-related examples
+├── vecadd/                         # Basic vector addition
+└── vecsum_multinode/               # Multi-GPU and multi-node vector summation
 ```
 
 ## Examples Overview
