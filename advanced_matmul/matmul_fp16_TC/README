@@ -1,0 +1,58 @@
+- Observation:
+
+It seems that it works fine with small matrics but it fails to run with larger matrics 
+like 9000 * 9000 (or 8000 * 8000). Is it because of the fp16 matrics multiplication? 
+It seems to work fine with fp32 (./matmul_shared -n 5 -v 9000 9000 9000).
+
+$ ./matmul_fp16_TensorCore -n 5 -v 9000 9000 9000
+Options:
+  Problem size: M = 9000, N = 9000, K = 9000
+  Number of iterations: 5
+  Execution mode: tensor_core
+  Print matrix: off
+  Validation: on
+
+Initializing (tensor_core mode)... done!
+Calculating (tensor_core mode)...(iter=0) 0.557337 sec
+Calculating (tensor_core mode)...(iter=1) 0.541843 sec
+Calculating (tensor_core mode)...(iter=2) 0.541797 sec
+Calculating (tensor_core mode)...(iter=3) 0.541634 sec
+Calculating (tensor_core mode)...(iter=4) 0.541633 sec
+Validating...
+Killed
+
+$ ./matmul_fp16_TensorCore -n 5 -v 9000 9000 9000 -m standard
+Options:
+  Problem size: M = 9000, N = 9000, K = 9000
+  Number of iterations: 5
+  Execution mode: standard
+  Print matrix: off
+  Validation: on
+
+Initializing (standard mode)... done!
+Calculating (standard mode)...(iter=0) 3.477092 sec
+Calculating (standard mode)...(iter=1) 3.476014 sec
+Calculating (standard mode)...(iter=2) 3.476563 sec
+Calculating (standard mode)...(iter=3) 3.475856 sec
+Calculating (standard mode)...(iter=4) 3.475973 sec
+Validating...
+Killed
+
+
+$ ./matmul_shared -n 5 -v 9000 9000 9000
+Options:
+  Problem size: M = 9000, N = 9000, K = 9000
+  Number of iterations: 5
+  Print matrix: off
+  Validation: on
+
+Initializing... done!
+Calculating...(iter=0) 2.797894 sec
+Calculating...(iter=1) 2.803999 sec
+Calculating...(iter=2) 2.799302 sec
+Calculating...(iter=3) 2.800114 sec
+Calculating...(iter=4) 2.800152 sec
+Validating...
+Result: VALID
+Avg. time: 2.800292 sec
+Avg. throughput: 520.659950 GFLOPS

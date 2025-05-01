@@ -1,0 +1,28 @@
+- Compile and run
+$ nvcc -o main main.cpp test1.
+
+- PTX file generation
+$ mkdir ptxfile-gen/
+$ cd ptxfile-gen/
+$ cp ../main.cpp ../test1.cu ./
+$ nvcc --save-temps -o main main.cpp test1.cu
+$ ls
+./                   main_dlink.o            test1.cpp4.ii         test1.fatbin
+../                  main_dlink.reg.c        test1.cu              test1.fatbin.c
+main*                main_dlink.sm_52.cubin  test1.cudafe1.c       test1.module_id
+main.cpp             main.o                  test1.cudafe1.cpp     test1.o
+main_dlink.fatbin    README                  test1.cudafe1.gpu     test1.ptx
+main_dlink.fatbin.c  test1.cpp1.ii           test1.cudafe1.stub.c  test1.sm_52.cubin
+$ ./main # run
+First 5 elements: 1.00 2.00 3.00 4.00 5.00
+
+- Compile and run PTX file using ptx file and cuda driver API
+$ mkdir ptx-compile/
+$ cd ptx-compile/
+$ cp ../ptxfile-gen/test1.ptx main.cpp ./
+$ cat main_cudadriverAPI.cpp # Modify main.cpp to use the CUDA Driver API
+$ nvcc -o main_cudadriverAPI  main_cudadriverAPI.cpp -lcuda
+$ ls
+./  ../  main.cpp  main_cudadriverAPI*  main_cudadriverAPI.cpp  README  test1.ptx
+$ ./main_cudadriverAPI # run
+First 5 elements: 1.00 2.00 3.00 4.00 5.00

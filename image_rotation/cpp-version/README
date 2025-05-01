@@ -1,0 +1,11 @@
+# Let's assume that the opencv package is installed in /scratch/qualis/.local/opencv/
+# compile with pkg-config
+$export PKG_CONFIG_PATH=/scratch/qualis/.local/opencv/lib64/pkgconfig:$PKG_CONFIG_PATH
+$g++ rotate_image_v2.cpp -o rotate_image_v2 `pkg-config --cflags --libs opencv4`
+
+# or compile manually
+$g++ rotate_image_v4.cpp -o rotate_image_v4   -I/scratch/qualis/.local/opencv/include/opencv4   -L/scratch/qualis/.local/opencv/lib64   -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs 
+
+# execute
+$export LD_LIBRARY_PATH=/scratch/qualis/.local/opencv/lib64:$LD_LIBRARY_PATH
+$rotate_image_v4 elephant.jpeg 30

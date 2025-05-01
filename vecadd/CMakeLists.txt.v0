@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.18)
+project(VecAdd LANGUAGES CXX CUDA)
+
+# Add the executable
+add_executable(vecadd 
+    main.cpp 
+    util.cpp 
+    vecadd.cu
+)
+
+# Specify include directories
+target_include_directories(vecadd PRIVATE 
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+# Link CUDA and OpenMP libraries
+find_package(CUDA REQUIRED)
+target_link_libraries(vecadd PRIVATE 
+    ${CUDA_LIBRARIES}
+    OpenMP::OpenMP_CXX
+)
+
+# Set CUDA compilation properties
+set_target_properties(vecadd PROPERTIES
+    CUDA_SEPARABLE_COMPILATION ON
+)
+
+# Optional: Install the executable
+install(TARGETS vecadd DESTINATION bin)

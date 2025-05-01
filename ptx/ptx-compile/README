@@ -1,0 +1,8 @@
+Step-by-step: Run main.cpp with test1.ptx
+
+1. Modify main.cpp to use the CUDA Driver API
+
+Replace kernelcall with a function that loads the PTX and launches the kernel using 
+cuLaunchKernel. (==> main_cudadriverAPI.cpp)
+
+2. nvcc -o main_cudadriverAPI  main_cudadriverAPI.cpp -lcuda

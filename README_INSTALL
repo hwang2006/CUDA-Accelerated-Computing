@@ -1,0 +1,6 @@
+# GCC, CUDA, MPI, CMAKE and OpenMP (optional) are required.
+$ module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_PREFIX_PATH=/scratch/qualis/local/opencv/build ..
+$ make -j8

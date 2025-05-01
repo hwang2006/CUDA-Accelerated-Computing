@@ -1,0 +1,2 @@
+$ nvcc --save-temps -o main main.cpp test1.cu
+

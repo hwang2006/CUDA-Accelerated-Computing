@@ -1,0 +1,43 @@
+typedef char __nv_bool;
+# 2797 "/apps/cuda/12.1/bin/../targets/x86_64-linux/include/driver_types.h"
+struct CUstream_st;
+# 209 "/apps/compiler/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include/stddef.h" 3
+typedef unsigned long size_t;
+#include "crt/device_runtime.h"
+# 260 "/apps/compiler/gcc/10.2.0/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/c++config.h" 3
+typedef unsigned long _ZSt6size_t;
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+# 3634 "/apps/cuda/12.1/bin/../targets/x86_64-linux/include/crt/device_functions.h"
+___device__(extern  __no_sc__) unsigned __cudaPushCallConfiguration(struct dim3, struct dim3, size_t, struct CUstream_st *);
+# 4 "test1.cu"
+__global__ __var_used__ extern void _Z6vecaddPfS_S_(float *, float *, float *);
+#include "common_functions.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+# 4 "test1.cu"
+__global__ __var_used__ void _Z6vecaddPfS_S_(
+# 4 "test1.cu"
+float *a, 
+# 4 "test1.cu"
+float *b, 
+# 4 "test1.cu"
+float *c){
+# 4 "test1.cu"
+{
+# 5 "test1.cu"
+ int __cuda_local_var_22510_9_non_const_i;
+# 5 "test1.cu"
+__cuda_local_var_22510_9_non_const_i = ((int)((threadIdx.x) + ((blockIdx.x) * (blockDim.x))));
+# 6 "test1.cu"
+(c[__cuda_local_var_22510_9_non_const_i]) = ((a[__cuda_local_var_22510_9_non_const_i]) + (b[__cuda_local_var_22510_9_non_const_i])); 
+# 7 "test1.cu"
+}}
