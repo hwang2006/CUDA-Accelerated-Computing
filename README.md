@@ -105,13 +105,52 @@ Each example can be run directly from the build directory:
 
 ```bash
 # Run vector addition example
-./vecadd/vecadd
+./vecadd/vecadd -h
+Usage: ./vecadd/vecadd [-pvh]  [-n num_iterations] N
+Options:
+  -p : print vector data. (default: off)
+  -v : validate vector addition. (default: off)
+  -h : print this page.
+  -t : number of threads (default: 1)
+  -n : number of iterations (default: 1)
+   N : number of elements of vectors. (default: 8)
 
 # Run matrix multiplication
-./matmul/matmul
+./matmul/matmul 
+Options:
+  Problem size: M = 8, N = 8, K = 8
+  Number of iterations: 1
+  Print matrix: off
+  Validation: off
+
+Initializing... done!
+Calculating...(iter=0) 0.000189 sec
+Avg. time: 0.000189 sec
+Avg. throughput: 0.005423 GFLOPS
 
 # Run image rotation (if OpenCV is available)
-./image_rotation/image_rotation
+./image_rotation/image_rotation -h
+Usage: ./image_rotation/image_rotation [-h] [-n num_src_images] [-d degree] [-i input_path]
+Options:
+  -h : print this page.
+  -n : number of source images (default: 1)
+  -d : rotation degree (default: 30)
+  -i : input image path or directory (default: ./images)
+
+# Run cuda stream example
+./miscellaneous/cudaStream
+
+*        DS_timer Report        *
+* The number of timer = 10, counter = 10
+**** Timer report ****
+Single stream : 240.71800 ms (240.71800 ms)
+  * Host -> Device : 21.19900 ms (21.19900 ms)
+  * Kernel execution : 199.13400 ms (199.13400 ms)
+  * Device -> Host : 20.38400 ms (20.38400 ms)
+Multiple streams : 209.45700 ms (209.45700 ms)
+**** Counter report ****
+*        End of the report      *
+ 
 ```
 
 ## Performance Benchmarking
