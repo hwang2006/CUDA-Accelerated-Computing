@@ -47,9 +47,9 @@ This repository provides hands-on examples that cover a wide range of CUDA progr
 
 ## Requirements
 
-- CUDA Toolkit 11.0+ (tested with CUDA 12.1)
 - CMake 3.18+
 - C++14 compatible compiler
+- CUDA Toolkit 11.0+ (tested with CUDA 12.1)
 - MPI implementation (e.g., OpenMPI 4.x) for multi-node examples
 - OpenMP (optional for CPU parallel implementations)
 - OpenCV 4.x (optional for image processing examples)
@@ -58,10 +58,10 @@ This repository provides hands-on examples that cover a wide range of CUDA progr
 
 ### Environment Setup
 
-If you're working in an HPC environment with environment modules, load the required modules:
+If you're working in a HPC environment with environment modules, load the required modules:
 
 ```bash
-# Example module configuration
+# An example module configuration
 module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
 
 # Verify loaded modules
