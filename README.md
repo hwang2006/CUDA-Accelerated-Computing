@@ -153,7 +153,7 @@ Multiple streams : 209.45700 ms (209.45700 ms)
  
 ```
 
-## Performance Benchmarking
+## Performance Analysis
 
 Most examples include timing measurements using the custom DSTimer utility. Results are printed to the console after execution.
 
