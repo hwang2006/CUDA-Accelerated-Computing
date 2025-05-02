@@ -24,7 +24,7 @@ This repository serves as a practical reference for developers, offering hands-o
 └── vecsum_multinode/               # Multi-GPU and multi-node vector summation
 ```
 
-## Examples Overview
+## Example Code Overview
 
 ### Basic Operations
 - **Vector Addition**: Simple CUDA kernel for adding two vectors
