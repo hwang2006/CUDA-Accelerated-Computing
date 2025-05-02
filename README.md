@@ -1,6 +1,8 @@
 # CUDA-Accelerated-Computing
 
-A comprehensive collection of CUDA programming examples demonstrating GPU-accelerated computing, performance optimization, and parallel programming techniques. Many examples are adapted and refactored from tutorials and hands-on exercises developed during the [2025 Accelerator Programming Winter School](https://thunder.snu.ac.kr/aps) that I attended and the [Multi-core Programming course](https://www.youtube.com/playlist?list=PLBrGAFAIyf5pp3QNigbh2hRU5EUD0crgI) on YouTube.
+A comprehensive collection of CUDA programming examples demonstrating GPU-accelerated computing, performance optimization, and parallel programming techniques. Many of these examples are adapted and refined from hands-on exercises and tutorials I completed during the [2025 Accelerator Programming Winter School](https://thunder.snu.ac.kr/aps) and the [Multi-core Programming](https://www.youtube.com/playlist?list=PLBrGAFAIyf5pp3QNigbh2hRU5EUD0crgI) course on YouTube. Whether you're new to CUDA or looking to deepen your understanding of high-performance GPU programming, this repo offers a practical reference point.
+
+
 
 ## Overview
 
@@ -50,8 +52,8 @@ This repository provides hands-on examples that cover a wide range of CUDA progr
 - CMake 3.18+
 - C++14 compatible compiler
 - CUDA Toolkit 11.0+ (tested with CUDA 12.1)
+- OpenMP for CPU parallel implementations
 - MPI implementation (e.g., OpenMPI 4.x) for multi-node examples
-- OpenMP (optional for CPU parallel implementations)
 - OpenCV 4.x (optional for image processing examples)
 
 ## Building the Project
@@ -103,9 +105,12 @@ See `OpenCV_Build_Install_Guide.md` for detailed instructions.
 
 Each example can be run directly from the build directory:
 
+### Vector Addition
 ```bash
-# Run vector addition example
-$ ./vecadd/vecadd -h
+./vecadd/vecadd -h
+```
+Output (sample):
+```
 Usage: ./vecadd/vecadd [-pvh]  [-n num_iterations] N
 Options:
   -p : print vector data. (default: off)
@@ -114,10 +119,14 @@ Options:
   -t : number of threads (default: 1)
   -n : number of iterations (default: 1)
    N : number of elements of vectors. (default: 8)
+```
 
-# Run matrix multiplication
-$ ./matmul/matmul 
-Options:
+### Matrix Multiplication
+```bash
+./matmul/matmul
+```
+Output (sample):
+```Options:
   Problem size: M = 8, N = 8, K = 8
   Number of iterations: 1
   Print matrix: off
@@ -127,19 +136,28 @@ Initializing... done!
 Calculating...(iter=0) 0.000189 sec
 Avg. time: 0.000189 sec
 Avg. throughput: 0.005423 GFLOPS
+```
 
-# Run image rotation (if OpenCV is available)
-$ ./image_rotation/image_rotation -h
+### Image Rotation (if OpenCV is available)
+```bash
+./image_rotation/image_rotation -h
+```
+Output (sample):
+```
 Usage: ./image_rotation/image_rotation [-h] [-n num_src_images] [-d degree] [-i input_path]
 Options:
   -h : print this page.
   -n : number of source images (default: 1)
   -d : rotation degree (default: 30)
   -i : input image path or directory (default: ./images)
+```
 
-# Run cuda stream example
-$ ./miscellaneous/cudaStream
-
+### CUDA Stream 
+```bash
+./miscellaneous/cudaStream
+```
+Output (sample):
+```
 *        DS_timer Report        *
 * The number of timer = 10, counter = 10
 **** Timer report ****
@@ -150,7 +168,6 @@ Single stream : 240.71800 ms (240.71800 ms)
 Multiple streams : 209.45700 ms (209.45700 ms)
 **** Counter report ****
 *        End of the report      *
- 
 ```
 
 ## Performance Analysis
