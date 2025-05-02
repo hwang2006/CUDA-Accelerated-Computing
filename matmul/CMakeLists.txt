@@ -6,7 +6,6 @@ add_executable(cpu_matmul
     cpu_matmul.cpp
 )
 
-
 add_executable(matmul
     main.cpp
     util.cpp
@@ -36,6 +35,12 @@ add_executable(matmul_stream
     util.cpp
     matmul_stream.cu
 )
+
+add_executable(matmul_comparison
+    matmul_comparision.cu
+    ../DSTimer/DS_timer.cpp
+)
+
 
 # Link CUDA and OpenMP libraries using modern target-based approach
 target_link_libraries(cpu_matmul PRIVATE
@@ -130,5 +135,23 @@ set_target_properties(matmul_stream PROPERTIES
     CUDA_SEPARABLE_COMPILATION ON
 )
 
+# Set CUDA compilation properties
+set_target_properties(matmul_stream PROPERTIES
+    CUDA_SEPARABLE_COMPILATION ON
+)
+
+# Specify include directories using native CUDA support
+target_include_directories(matmul_comparison PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/../DSTimer
+    ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
+)
+
+# Link CUDA and OpenMP libraries using modern target-based approach
+target_link_libraries(matmul_comparison PRIVATE
+    cudart
+    OpenMP::OpenMP_CXX
+)
+
 # Optional: Install the executable
-install(TARGETS matmul matmul_basic matmul_unrolling matmul_unrolling_stream matmul_stream DESTINATION bin)
+install(TARGETS matmul matmul_basic matmul_unrolling matmul_unrolling_stream matmul_stream matmul_comparison DESTINATION bin)
