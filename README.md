@@ -61,7 +61,7 @@ This repository provides hands-on examples that cover a wide range of CUDA progr
 If you're working in a HPC environment with environment modules, load the required modules:
 
 ```bash
-# An example module configuration
+# An example module configuration for KISTI GPU Cluster (Neuron: https://www.ksc.re.kr/eng/resources/neuron)
 module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
 
 # Verify loaded modules
