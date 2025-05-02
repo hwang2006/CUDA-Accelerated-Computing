@@ -74,7 +74,7 @@ Currently Loaded Modules:
    2) htop/3.0.5    4) gcc/10.2.0          6) cudampi/openmpi-4.1.1
 ```
 
-### (Optional) Step 2: OpenCV Setup
+### Step 2 (optional): OpenCV Setup
 
 To enable image rotation examples with OpenCV:
 
