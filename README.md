@@ -62,10 +62,10 @@ If you're working in a HPC environment with environment modules, load the requir
 
 ```bash
 # An example module configuration for KISTI GPU Cluster (Neuron: https://www.ksc.re.kr/eng/resources/neuron)
-module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
+$ module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
 
 # Verify loaded modules
-module list
+$ module list
 # Expected output similar to:
 # Currently Loaded Modules:
 #   1) nvtop/1.1.0   3) singularity/4.1.0   5) cuda/12.1               7) cmake/3.26.2
@@ -74,17 +74,17 @@ module list
 
 ```bash
 # Clone the repository
-git clone https://github.com/hwang2006/CUDA-Accelerated-Computing.git
-cd CUDA-Accelerated-Computing
+$ git clone https://github.com/hwang2006/CUDA-Accelerated-Computing.git
+$ cd CUDA-Accelerated-Computing
 
 # Create build directory
-mkdir build && cd build
+$ mkdir build && cd build
 
 # Configure with CMake
-cmake ..
+$ cmake ..
 
 # Build
-make -j8
+$ make -j8
 ```
 
 ### OpenCV Setup (Optional)
@@ -105,7 +105,7 @@ Each example can be run directly from the build directory:
 
 ```bash
 # Run vector addition example
-./vecadd/vecadd -h
+$ ./vecadd/vecadd -h
 Usage: ./vecadd/vecadd [-pvh]  [-n num_iterations] N
 Options:
   -p : print vector data. (default: off)
@@ -116,7 +116,7 @@ Options:
    N : number of elements of vectors. (default: 8)
 
 # Run matrix multiplication
-./matmul/matmul 
+$ ./matmul/matmul 
 Options:
   Problem size: M = 8, N = 8, K = 8
   Number of iterations: 1
@@ -129,7 +129,7 @@ Avg. time: 0.000189 sec
 Avg. throughput: 0.005423 GFLOPS
 
 # Run image rotation (if OpenCV is available)
-./image_rotation/image_rotation -h
+$ ./image_rotation/image_rotation -h
 Usage: ./image_rotation/image_rotation [-h] [-n num_src_images] [-d degree] [-i input_path]
 Options:
   -h : print this page.
@@ -138,7 +138,7 @@ Options:
   -i : input image path or directory (default: ./images)
 
 # Run cuda stream example
-./miscellaneous/cudaStream
+$ ./miscellaneous/cudaStream
 
 *        DS_timer Report        *
 * The number of timer = 10, counter = 10
