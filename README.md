@@ -1,10 +1,10 @@
 # CUDA Accelerated Computing
 
-A comprehensive collection of CUDA programming examples demonstrating GPU-accelerated computing, performance optimization, and parallel programming techniques. Many of these examples are adapted and refined from hands-on exercises and tutorials I completed during the [2025 Accelerator Programming Winter School](https://thunder.snu.ac.kr/aps) and the [Multi-core Programming](https://www.youtube.com/playlist?list=PLBrGAFAIyf5pp3QNigbh2hRU5EUD0crgI) course on YouTube. 
+A comprehensive collection of CUDA programming examples demonstrating GPU-accelerated computing, performance optimization, and parallel programming techniques.  Many examples are adapted and refined from hands-on exercises and tutorials I completed during the [2025 Accelerator Programming Winter School](https://thunder.snu.ac.kr/aps) and the [Multi-core Programming](https://www.youtube.com/playlist?list=PLBrGAFAIyf5pp3QNigbh2hRU5EUD0crgI) course on YouTube. 
 
 ## Overview
 
-This repository provides a practical reference point and hands-on examples that cover a wide range of CUDA programming concepts—from fundamental vector operations to advanced multi-GPU and multi-node computations. It’s designed to help developers understand and apply GPU acceleration in real-world applications.
+This repository serves as a practical reference for developers, offering hands-on examples that span a wide range of CUDA programming concepts—from basic vector operations to advanced multi-GPU and multi-node computations. It's designed to help learners and practitioners understand and apply GPU acceleration in real-world scenarios.
 
 ## Project Structure
 
