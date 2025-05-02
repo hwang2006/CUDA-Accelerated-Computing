@@ -189,4 +189,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Multi-core Programming YouTube Course](https://www.youtube.com/playlist?list=PLBrGAFAIyf5pp3QNigbh2hRU5EUD0crgI) for inspiration and practical parallel computing techniques
 - AI pair programming tools (e.g., ChatGPT, Gemini, Cluade, GitHub Copilot) for coding assistance and development support
 - NVIDIA for CUDA documentation and examples
-- The OpenCV community (for image processing examples)
