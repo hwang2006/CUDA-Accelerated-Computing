@@ -59,21 +59,45 @@ This repository serves as a practical reference for developers, offering hands-o
 
 ### Step 1: Environment Setup
 
-If you're working in a HPC environment with environment modules, load the required modules:
+If you're working in an HPC environment with environment modules, load the required modules. For example, on the [KISTI Neuron GPU Cluster (Neuron)](https://www.ksc.re.kr/eng/resources/neuron):
 
 ```bash
-# An example module configuration for KISTI GPU Cluster (Neuron: https://www.ksc.re.kr/eng/resources/neuron)
-$ module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
+module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
 
-# Verify loaded modules 
-$ module list  # Expected output similar to:
-
+# Check loaded modules
+module list
+```
+Output (sample):
+```
 Currently Loaded Modules:
    1) nvtop/1.1.0   3) singularity/4.1.0   5) cuda/12.1               7) cmake/3.26.2
    2) htop/3.0.5    4) gcc/10.2.0          6) cudampi/openmpi-4.1.1
 ```
 
-### Step 2: Build Instructions
+### (Optional) Step 2: OpenCV Setup
+
+To enable image rotation examples with OpenCV:
+
+1. Install OpenCV (e.g., via system package manager or build from source).
+
+2. Edit the root CMakeLists.txt file and **`uncomment`** the line specifying OpenCV_DIR, then set it to your OpenCV installation path:
+```cmake
+set(OpenCV_DIR "/path/to/opencv/lib64/cmake/opencv4")`
+```
+
+3. Confirm that OpenCV is detected during CMake configuration. If found, the image_rotation subdirectory will be automatically included:
+```cmake
+if(OpenCV_FOUND)
+    message(STATUS "OpenCV found, adding image_rotation subdirectory.")
+    add_subdirectory(image_rotation)
+else()
+    message(WARNING "OpenCV not found, skipping image_rotation subdirectory.")
+endif()
+```
+
+For a step-by-step OpenCV build guide, see **`OpenCV_Build_Install_Guide.md`**.
+
+### Step 3: Build Instructions
 
 ```bash
 # Clone the repository
@@ -89,18 +113,6 @@ cmake ..
 # Build
 make -j8
 ```
-
-### OpenCV Setup (Optional)
-
-For image rotation examples with OpenCV:
-
-1. Install OpenCV or build from source
-2. Set OpenCV_DIR in CMake:
-   ```
-   set(OpenCV_DIR "/path/to/opencv/lib64/cmake/opencv4")
-   ```
-
-See `OpenCV_Build_Install_Guide.md` for detailed instructions.
 
 ## Running Examples
 
@@ -142,6 +154,7 @@ Avg. throughput: 0.005423 GFLOPS
 ### Image Rotation (if OpenCV is available)
 ```bash
 ./image_rotation/image_rotation -h
+
 ```
 Output (sample):
 ```
