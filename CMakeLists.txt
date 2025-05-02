@@ -15,7 +15,7 @@ set(CMAKE_CUDA_ARCHITECTURES 70 75 80 90)
 include_directories()
 
 # Add this line before find_package(OpenCV REQUIRED)
-set(OpenCV_DIR "/scratch/qualis/.local/opencv/lib64/cmake/opencv4")
+#set(OpenCV_DIR "/scratch/qualis/.local/opencv/lib64/cmake/opencv4")
 
 # Check if OpenCV is installed
 find_package(OpenCV)
