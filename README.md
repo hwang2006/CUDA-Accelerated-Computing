@@ -135,20 +135,53 @@ Options:
 ```
 
 ### Matrix Multiplication
+#### Using CUDA Core (FP32)
 ```bash
-./matmul/matmul
+./matmul/matmul -n 5 -v 4096 4096 4096
 ```
 Output (sample):
-```Options:
-  Problem size: M = 8, N = 8, K = 8
-  Number of iterations: 1
+```
+Options:
+  Problem size: M = 4096, N = 4096, K = 4096
+  Number of iterations: 5
   Print matrix: off
-  Validation: off
+  Validation: on
 
 Initializing... done!
-Calculating...(iter=0) 0.000189 sec
-Avg. time: 0.000189 sec
-Avg. throughput: 0.005423 GFLOPS
+Calculating...(iter=0) 0.344709 sec
+Calculating...(iter=1) 0.327790 sec
+Calculating...(iter=2) 0.327588 sec
+Calculating...(iter=3) 0.327535 sec
+Calculating...(iter=4) 0.327454 sec
+Validating...
+Result: VALID
+Avg. time: 0.331015 sec
+Avg. throughput: 415.204351 GFLOPS
+```
+
+#### Using CUDA Tensor Core (FP16)
+```bash
+./advanced_matmul/matmul_fp16_TensorCore -n 5 -v 4096 4096 4096
+```
+Output (sample):
+```
+Options:
+  Problem size: M = 4096, N = 4096, K = 4096
+  Number of iterations: 5
+  Execution mode: tensor_core
+  Print matrix: off
+  Validation: on
+
+Initializing (tensor_core mode)... done!
+Calculating (tensor_core mode)...(iter=0) 0.054740 sec
+Calculating (tensor_core mode)...(iter=1) 0.054472 sec
+Calculating (tensor_core mode)...(iter=2) 0.054435 sec
+Calculating (tensor_core mode)...(iter=3) 0.054451 sec
+Calculating (tensor_core mode)...(iter=4) 0.054442 sec
+Validating...
+Result: VALID
+Avg. time (tensor_core mode): 0.054508 sec
+Avg. throughput (tensor_core mode): 2521.442478 GFLOPS
 ```
 
 ### Image Rotation (if OpenCV is available)
