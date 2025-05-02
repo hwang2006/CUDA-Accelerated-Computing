@@ -57,7 +57,7 @@ This repository provides a practical reference point and hands-on examples that 
 
 ## Building the Project
 
-### Environment Setup
+### Step 1: Environment Setup
 
 If you're working in a HPC environment with environment modules, load the required modules:
 
@@ -65,27 +65,29 @@ If you're working in a HPC environment with environment modules, load the requir
 # An example module configuration for KISTI GPU Cluster (Neuron: https://www.ksc.re.kr/eng/resources/neuron)
 $ module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
 
-# Verify loaded modules
-$ module list
-# Expected output similar to:
-# Currently Loaded Modules:
-#   1) nvtop/1.1.0   3) singularity/4.1.0   5) cuda/12.1               7) cmake/3.26.2
-#   2) htop/3.0.5    4) gcc/10.2.0          6) cudampi/openmpi-4.1.1
+# Verify loaded modules 
+$ module list  # Expected output similar to:
+
+Currently Loaded Modules:
+   1) nvtop/1.1.0   3) singularity/4.1.0   5) cuda/12.1               7) cmake/3.26.2
+   2) htop/3.0.5    4) gcc/10.2.0          6) cudampi/openmpi-4.1.1
 ```
+
+### Step 2: Build Instructions
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/hwang2006/CUDA-Accelerated-Computing.git
-$ cd CUDA-Accelerated-Computing
+git clone https://github.com/hwang2006/CUDA-Accelerated-Computing.git
+cd CUDA-Accelerated-Computing
 
 # Create build directory
-$ mkdir build && cd build
+mkdir build && cd build
 
 # Configure with CMake
-$ cmake ..
+cmake ..
 
 # Build
-$ make -j8
+make -j8
 ```
 
 ### OpenCV Setup (Optional)
