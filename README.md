@@ -82,7 +82,7 @@ To enable image rotation examples with OpenCV:
 
 2. Edit the root CMakeLists.txt file and **`uncomment`** the line specifying OpenCV_DIR, then set it to your OpenCV installation path:
 ```cmake
-set(OpenCV_DIR "/path/to/opencv/lib64/cmake/opencv4")`
+set(OpenCV_DIR "/path/to/opencv/lib64/cmake/opencv4")
 ```
 
 3. Confirm that OpenCV is detected during CMake configuration. If found, the image_rotation subdirectory will be automatically included:
