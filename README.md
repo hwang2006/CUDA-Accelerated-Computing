@@ -184,6 +184,37 @@ Avg. time (tensor_core mode): 0.054508 sec
 Avg. throughput (tensor_core mode): 2521.442478 GFLOPS
 ```
 
+#### Kernel Comparison (multiple CUDA matmul implementations)
+```bash
+./matmul/matmul_comparison
+```
+Output (sample):
+```
+Size : A = (1024 by 1024), B = (1024 by 2048), C = (1024 by 2048)
+CPU finished!
+Grid(64, 128), Block(16, 16)
+[Kernel basic with Row] Results are matched!
+[Kernel basic with Col] Results are matched!
+[Kernel shared memory with xCol] Results are matched!
+[Kernel shared memory] Results are matched!
+[Kernel no bank conflict] Results are matched!
+
+*        DS_timer Report        *
+* The number of timer = 10, counter = 10
+**** Timer report ****
+CPU code : 10557.90400 ms (10557.90400 ms)
+Kernel with row - basic : 58.50500 ms (58.50500 ms)
+Kernel with col - basic : 5.52200 ms (5.52200 ms)
+Kernel - shared memory : 27.90900 ms (27.90900 ms)
+Kernel - shared memory with col : 6.78600 ms (6.78600 ms)
+Kernel - no bank conflict : 16.39000 ms (16.39000 ms)
+[Data transter] host->device : 1.23700 ms (1.23700 ms)
+[Data transfer] device->host : 2.37700 ms (2.37700 ms)
+**** Counter report ****
+*        End of the report      *
+```
+
+
 ### Image Rotation (if OpenCV is available)
 ```bash
 ./image_rotation/image_rotation -h
