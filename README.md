@@ -1,12 +1,10 @@
 # CUDA-Accelerated-Computing
 
-A comprehensive collection of CUDA programming examples demonstrating GPU-accelerated computing, performance optimization, and parallel programming techniques. Many of these examples are adapted and refined from hands-on exercises and tutorials I completed during the [2025 Accelerator Programming Winter School](https://thunder.snu.ac.kr/aps) and the [Multi-core Programming](https://www.youtube.com/playlist?list=PLBrGAFAIyf5pp3QNigbh2hRU5EUD0crgI) course on YouTube. Whether you're new to CUDA or looking to deepen your understanding of high-performance GPU programming, this repo offers a practical reference point.
-
-
+A comprehensive collection of CUDA programming examples demonstrating GPU-accelerated computing, performance optimization, and parallel programming techniques. Many of these examples are adapted and refined from hands-on exercises and tutorials I completed during the [2025 Accelerator Programming Winter School](https://thunder.snu.ac.kr/aps) and the [Multi-core Programming](https://www.youtube.com/playlist?list=PLBrGAFAIyf5pp3QNigbh2hRU5EUD0crgI) course on YouTube. 
 
 ## Overview
 
-This repository provides hands-on examples that cover a wide range of CUDA programming concepts—from fundamental vector operations to advanced multi-GPU and multi-node computations. It’s designed to help developers understand and apply GPU acceleration in real-world applications.
+This repository provides a practical reference point and hands-on examples that cover a wide range of CUDA programming concepts—from fundamental vector operations to advanced multi-GPU and multi-node computations. It’s designed to help developers understand and apply GPU acceleration in real-world applications.
 
 ## Project Structure
 
@@ -36,6 +34,7 @@ This repository provides hands-on examples that cover a wide range of CUDA progr
 - **Tensor Core Operations**: Matrix multiplication using CUDA Tensor Cores
 - **Shared Memory**: Optimization with CUDA shared memory
 - **Stream Processing**: Overlapping computation and data transfer
+- **CUDA Event**: Timing and synchronization with CUDA events (single and multi-GPU)
 - **Multi-GPU Programming**: Distributing work across multiple GPUs
 
 ### Image Processing
