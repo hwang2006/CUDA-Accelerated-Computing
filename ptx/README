@@ -1,5 +1,5 @@
 - Compile and run
-$ nvcc -o main main.cpp test1.
+$ nvcc -o main main.cpp test1.cu
 
 - PTX file generation
 $ mkdir ptxfile-gen/
