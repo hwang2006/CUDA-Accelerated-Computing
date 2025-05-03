@@ -4,7 +4,7 @@ A comprehensive collection of CUDA programming examples demonstrating GPU-accele
 
 ## Overview
 
-This repository serves as a practical reference for developers, offering hands-on examples that span a wide range of CUDA programming concepts—from basic vector operations to advanced multi-GPU and multi-node computations. It's designed to help learners and practitioners understand and apply GPU acceleration in real-world scenarios.
+This repository serves as a practical reference for developers, offering hands-on examples that span a wide range of CUDA programming concepts—from basic vector operations to advanced multi-GPU and multi-node computations. It's designed to help researchers and practitioners understand and apply GPU acceleration in real-world scenarios.
 
 ## Project Structure
 
