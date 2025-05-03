@@ -48,11 +48,11 @@ This repository serves as a practical reference for developers, offering hands-o
 
 ## Requirements
 
-- CMake 3.18+
-- C++14 compatible compiler
+- CMake 3.18+ (tested with 3.26.2)
+- C++14 compatible compiler (tested with g++/gcc 10.2.0)
 - CUDA Toolkit 11.0+ (tested with CUDA 12.1)
-- OpenMP for CPU parallel implementations
-- MPI implementation (e.g., OpenMPI 4.x) for multi-node examples
+- OpenMP (comes with GCC) for CPU parallel implementations
+- MPI implementation (tested with OpenMPI 4.1.1) for multi-node examples
 - OpenCV 4.x (optional for image processing examples)
 
 ## Building the Project
