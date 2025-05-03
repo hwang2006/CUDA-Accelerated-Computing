@@ -59,7 +59,7 @@ This repository serves as a practical reference for developers, offering hands-o
 
 ### Step 1: Environment Setup
 
-If you're working in an HPC environment with environment modules, load the required modules. For example, on the [KISTI Neuron GPU Cluster](https://www.ksc.re.kr/eng/resources/neuron):
+If you're working in an HPC environment with environment modules, load the required modules. For example, on the [KISTI *Neuron* GPU Cluster](https://www.ksc.re.kr/eng/resources/neuron):
 
 ```bash
 module load gcc/10.2.0 cuda/12.1 cudampi/openmpi-4.1.1 cmake/3.26.2
